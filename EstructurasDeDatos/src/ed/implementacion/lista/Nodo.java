@@ -1,5 +1,11 @@
 package ed.implementacion.lista;
 
+/**
+ * 
+ * @author omar mendoza
+ *
+ * @param <T> Objeto que se almacenará en el nodo
+ */
 public class Nodo<T> {
     private T valor;
     private Nodo<T> siguiente;
