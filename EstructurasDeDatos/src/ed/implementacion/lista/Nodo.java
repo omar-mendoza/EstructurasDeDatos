@@ -1,7 +1,7 @@
 package ed.implementacion.lista;
 
 /**
- * 
+ *
  * @author omar mendoza
  *
  * @param <T> Objeto que se almacenará en el nodo
