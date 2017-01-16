@@ -1,7 +1,5 @@
 package ed.implementacion.lista;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-
 import ed.implementacion.clases.Persona;
 
 public class PruebaLista {

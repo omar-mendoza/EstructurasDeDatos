@@ -76,9 +76,6 @@ public class Lista<T> {
      * @return true si el valor se encuentra en la lista, si no se encuentra retorna false
      */
     public boolean buscar(T valor) {
-        if(esVacia())
-            return false;
-
         Nodo<T> aux = inicio;
         while(aux != null) {
             if(aux.getValor().equals(valor))
