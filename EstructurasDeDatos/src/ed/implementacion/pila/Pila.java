@@ -21,12 +21,12 @@ public class Pila<T> {
         lista.agregarAlInicio(valor);
     }
 
-    public T remover() {
+    public T obtener() {
         return lista.obtenerPrimero();
     }
 
     public void limpiar() {
-
+        lista.limpia();
     }
 
     public boolean esVacia() {
@@ -37,4 +37,7 @@ public class Pila<T> {
         return lista.getTamanio();
     }
 
+    public void mostrar() {
+        lista.mostrar();
+    }
 }

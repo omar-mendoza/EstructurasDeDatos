@@ -21,11 +21,19 @@ public class Cola<T> {
         lista.agregarAlFinal(valor);
     }
 
-    public T remover() {
+    public T obtener() {
         return lista.obtenerPrimero();
     }
 
     public boolean esVacia() {
         return lista.esVacia();
+    }
+
+    public void limpia() {
+        lista.limpia();
+    }
+
+    public void mostrar() {
+        lista.mostrar();
     }
 }

@@ -116,8 +116,8 @@ public class Lista<T> {
     }
 
     /**
-     * Obtiene el primer valor de la lista y lo elimina
-     * @return Primer elemento de la lista
+     * Regresa y elimina el primer elemento de la lista
+     * @return Primer elemento T de la lista
      */
     public T obtenerPrimero() {
         if(esVacia())
@@ -129,6 +129,10 @@ public class Lista<T> {
         return valor;
     }
 
+    /**
+     * Regresa elimina el último elemento de la lista
+     * @return Último elemento T de la lista
+     */
     public T obtenerUltimo() {
         if(esVacia())
             return null;
@@ -141,6 +145,14 @@ public class Lista<T> {
         aux.setSiguiente(null);
         tamanio--;
         return valor;
+    }
+
+    /**
+     * Limpia la lista
+     */
+    public void limpia() {
+        this.inicio = null;
+        this.tamanio = 0;
     }
 
     /**
