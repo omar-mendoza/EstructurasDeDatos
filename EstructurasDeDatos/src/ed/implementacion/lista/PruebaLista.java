@@ -69,6 +69,10 @@ public class PruebaLista {
         System.out.println("*******");
         cadenas.mostrar();
         System.out.println(cadenas.getTamanio());
+        
+        // 
+        Lista<Integer> listInt = new Lista<>();
+        System.out.println("listInt " + listInt.buscar(1));
 
 
     }

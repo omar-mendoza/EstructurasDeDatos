@@ -92,28 +92,28 @@ public class Lista<T> {
      * @param valor Valor a eliminar de la lista
      */
     public boolean remover(T valor) {
-        if(esVacia())
-            return false;
-
-        if(inicio.getValor().equals(valor)) {
-            inicio = inicio.getSiguiente();
-            tamanio--;
-            return true;
-        } else {
-            Nodo<T> aux = inicio;
-            while(aux != null) {
-                if(aux.getSiguiente() != null && aux.getSiguiente().getValor().equals(valor)) {
-                    aux.setSiguiente(aux.getSiguiente().getSiguiente());
-                    tamanio--;
-                    return true;
-                } else {
-                    aux = aux.getSiguiente();
-                }
-            }
-
+        Nodo<T> actual = inicio;
+        Nodo<T> anterior = null;
+        boolean encontrado = false;
+        while(actual != null && !encontrado) {
+            
+        	encontrado = actual.getValor().equals(valor);
+        	
+        	if(!encontrado) {
+        		anterior = actual;
+            	actual = actual.getSiguiente();
+        	}
         }
-        return false;
-    }
+        
+       if(actual != null) {
+    	   if(actual == inicio) {
+    		   inicio = actual.getSiguiente();
+    	   } else {
+    		   anterior.setSiguiente(actual.getSiguiente());
+    	   }
+       }
+        return encontrado;
+     }
 
     /**
      * Regresa y elimina el primer elemento de la lista
@@ -130,19 +130,27 @@ public class Lista<T> {
     }
 
     /**
-     * Regresa elimina el último elemento de la lista
+     * Regresa y elimina el último elemento de la lista
      * @return Último elemento T de la lista
      */
     public T obtenerUltimo() {
         if(esVacia())
             return null;
-
-        Nodo<T> aux = inicio;
-        while(aux.getSiguiente().getSiguiente() != null) {
-            aux = aux.getSiguiente();
+        Nodo<T> actual = inicio;
+        Nodo<T> anterior = null;
+        while(actual.getSiguiente() != null) {
+        	anterior = actual;
+            actual = actual.getSiguiente();
         }
-        T valor = aux.getSiguiente().getValor();
-        aux.setSiguiente(null);
+        
+        T valor = actual.getValor();
+        
+        if(actual == inicio) {
+        	inicio = null;
+        } else {
+        	anterior.setSiguiente(null);
+        }
+        
         tamanio--;
         return valor;
     }
